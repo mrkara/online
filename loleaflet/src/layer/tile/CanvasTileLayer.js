@@ -5666,11 +5666,6 @@ L.CanvasTileLayer = L.Layer.extend({
 						coords: coords,
 						current: true
 					};
-
-					this.fire('tileloadstart', {
-						tile: tile,
-						coords: coords
-					});
 				}
 
 				if (!this._tileCache[key]) {
@@ -5768,11 +5763,6 @@ L.CanvasTileLayer = L.Layer.extend({
 						coords: coords,
 						current: true
 					};
-
-					this.fire('tileloadstart', {
-						tile: tile,
-						coords: coords
-					});
 
 					if (tile && this._tileCache[key]) {
 						tile.src = this._tileCache[key];
