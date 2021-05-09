@@ -204,7 +204,6 @@
 }
 
 #toolbar-wrapper.hasnotebookbar {
-	position: relative;
 	z-index: 11;
 }
 
