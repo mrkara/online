@@ -98,6 +98,7 @@ L.WriterTileLayer = L.CanvasTileLayer.extend({
 		}
 
 		if (values.comments) {
+			app.sectionContainer.getSectionWithName(L.CSections.CommentList.name).importComments(values.comments);
 			this._annotations.fill(values.comments);
 		}
 		else if (values.redlines) {
