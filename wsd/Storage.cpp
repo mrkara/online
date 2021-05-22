@@ -791,6 +791,7 @@ void WopiStorage::WOPIFileInfo::init()
     _disableChangeTrackingRecord = WOPIFileInfo::TriState::Unset;
     _disableChangeTrackingShow = WOPIFileInfo::TriState::Unset;
     _hideChangeTrackingControls = WOPIFileInfo::TriState::Unset;
+    _freemium = false;
 }
 
 WopiStorage::WOPIFileInfo::WOPIFileInfo(const FileInfo &fileInfo,
@@ -877,6 +878,7 @@ WopiStorage::WOPIFileInfo::WOPIFileInfo(const FileInfo &fileInfo,
     JsonUtil::findJSONValue(object, "UserCanRename", _userCanRename);
     JsonUtil::findJSONValue(object, "BreadcrumbDocName", _breadcrumbDocName);
     JsonUtil::findJSONValue(object, "FileUrl", _fileUrl);
+    JsonUtil::findJSONValue(object, "Freemium", _freemium);
     bool booleanFlag = false;
     if (JsonUtil::findJSONValue(object, "DisableChangeTrackingRecord", booleanFlag))
         _disableChangeTrackingRecord = (booleanFlag ? WOPIFileInfo::TriState::True : WOPIFileInfo::TriState::False);

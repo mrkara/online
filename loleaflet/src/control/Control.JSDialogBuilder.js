@@ -2455,6 +2455,7 @@ L.Control.JSDialogBuilder = L.Control.extend({
 		if (data.enabled === 'false' || data.enabled === false)
 			$(button).prop('disabled', true);
 
+		builder.map.disableFreemiumNote(data, parentContainer, controls['container']);
 		return controls;
 	},
 

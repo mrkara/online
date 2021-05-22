@@ -420,6 +420,7 @@ public:
         bool getSupportsRename() const { return _supportsRename; }
         bool getSupportsLocks() const { return _supportsLocks; }
         bool getUserCanRename() const { return _userCanRename; }
+        bool getFreemium() const { return _freemium; }
         std::string& getHideUserList() { return _hideUserList; }
         TriState getDisableChangeTrackingShow() const { return _disableChangeTrackingShow; }
         TriState getDisableChangeTrackingRecord() const { return _disableChangeTrackingRecord; }
@@ -487,6 +488,9 @@ public:
         bool _supportsRename;
         /// If user is allowed to rename the document
         bool _userCanRename;
+        /// If user is on freemium plan
+        bool _freemium;
+
     };
 
     /// Returns the response of CheckFileInfo WOPI call for URI that was

@@ -28,6 +28,7 @@ L.Map.WOPI = L.Handler.extend({
 	CallPythonScriptSource: null,
 	SupportsRename: false,
 	UserCanRename: false,
+	Freemium: false,
 
 	_appLoadedConditions: {
 		docloaded: false,
@@ -116,6 +117,7 @@ L.Map.WOPI = L.Handler.extend({
 		this.SupportsRename = !!wopiInfo['SupportsRename'];
 		this.UserCanRename = !!wopiInfo['UserCanRename'];
 		this.EnableShare = !!wopiInfo['EnableShare'];
+		this.Freemium = !!wopiInfo['Freemium'];
 		if (wopiInfo['HideUserList'])
 			this.HideUserList = wopiInfo['HideUserList'].split(',');
 
@@ -133,6 +135,10 @@ L.Map.WOPI = L.Handler.extend({
 			this._map.showBusy(_('Creating new file from template...'), false);
 			this._map.saveAs(wopiInfo['TemplateSaveAs']);
 		}
+	},
+
+	_isFreemiumUser: function() {
+		return this.Freemium;
 	},
 
 	resetAppLoaded: function() {
